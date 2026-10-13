@@ -1,0 +1,168 @@
+/* Black, hot pink and Pangolin, the same identity as mishleto.itch.io */
+:root { --bg: #080809; --pink: #ff0cc5; } /* a hair lighter than pure black, easier on the eyes */
+* { box-sizing: border-box; }
+body { margin: 0; overflow-x: hidden; background: var(--bg); color: #fff; font: 400 19px/1.6 Pangolin, "Comic Sans MS", cursive; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+h1 { margin: 0; }
+
+header { text-align: center; padding: 56px 20px 0; }
+/* The logo SVG keeps extra room above and below so its animation never gets clipped;
+   the negative margins (32/485 and 40/485 of its width) cancel that room in the layout. */
+.logo { --w: min(440px, 80vw); display: block; width: var(--w); height: auto; margin: calc(var(--w) * -.066) auto calc(var(--w) * -.0825); }
+.hi { margin: 14px 0 0; font-size: clamp(22px, 3vw, 28px); }
+.hi span { position: relative; color: var(--pink); white-space: nowrap; }
+.hi svg { position: absolute; left: 0; right: 0; bottom: -10px; width: 100%; height: 12px; }
+
+/* Games as taped polaroids */
+.cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 88px 96px; padding: 96px 28px 72px; }
+.card { position: relative; width: min(430px, 100%); text-align: center; scroll-margin-top: 48px; }
+.polaroid {
+  position: relative; display: block; padding: 12px 12px 6px; background: #fff; color: #111; text-decoration: none;
+  transform: rotate(-4deg); box-shadow: 0 22px 44px -22px rgba(255, 12, 197, .5); transition: transform .3s ease;
+}
+.card:nth-child(2) .polaroid { transform: rotate(3deg); }
+.card .polaroid:hover { transform: rotate(0) scale(1.03); }
+.polaroid img { display: block; width: 100%; height: auto; aspect-ratio: 616 / 353; object-fit: cover; }
+.cap { display: block; padding: 10px 0 6px; font-size: 24px; }
+
+/* Torn washi tape */
+.tape {
+  position: absolute; z-index: 2; top: -17px; left: 50%; width: 132px; height: 34px;
+  transform: translateX(-50%) rotate(-4deg); background: rgba(255, 12, 197, .62);
+  clip-path: polygon(0 10%, 5% 0, 10% 10%, 15% 0, 20% 10%, 25% 0, 30% 10%, 35% 0, 40% 10%, 45% 0, 50% 10%, 55% 0, 60% 10%, 65% 0, 70% 10%, 75% 0, 80% 10%, 85% 0, 90% 10%, 95% 0, 100% 10%,
+                     100% 90%, 95% 100%, 90% 90%, 85% 100%, 80% 90%, 75% 100%, 70% 90%, 65% 100%, 60% 90%, 55% 100%, 50% 90%, 45% 100%, 40% 90%, 35% 100%, 30% 90%, 25% 100%, 20% 90%, 15% 100%, 10% 90%, 5% 100%, 0 90%);
+}
+.card:nth-child(2) .tape { transform: translateX(-50%) rotate(5deg); }
+
+.sticker {
+  position: absolute; z-index: 3; top: -34px; right: -24px;
+  display: grid; place-items: center; width: 100px; height: 100px; border-radius: 50%;
+  background: var(--pink); color: #000; font-size: 19px; line-height: 1.05; text-align: center;
+  transform: rotate(14deg); box-shadow: 0 6px 0 rgba(255, 255, 255, .18);
+}
+.sticker.light { background: #fff; }
+
+.note { margin: 30px 0 0; color: #ddd; }
+.links { margin: 10px 0 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 18px; }
+.links a { color: var(--pink); font-size: 22px; text-decoration: none; border-bottom: 2px dashed var(--pink); }
+.links a:hover { border-bottom-style: solid; }
+.arrow { flex: none; width: 58px; height: 36px; }
+
+footer { text-align: center; padding: 8px 20px 72px; }
+.say { display: inline-flex; align-items: center; gap: 10px; color: #bbb; }
+.mail { display: block; margin-top: 4px; font-size: clamp(26px, 4vw, 34px); text-decoration: none; }
+.mail:hover { color: var(--pink); }
+footer nav { margin-top: 14px; }
+footer nav a { margin: 0 10px; color: var(--pink); text-decoration: none; }
+footer nav a:hover { text-decoration: underline; }
+
+/* 404 */
+.lost { padding: 48px 20px 96px; text-align: center; }
+.lost .links a { font-size: 24px; }
+
+@media (max-width: 560px) { .sticker { right: -8px; width: 84px; height: 84px; font-size: 16px; } }
+
+/* ---------- Press kit ---------- */
+.press-head { text-align: center; padding: 48px 20px 0; }
+.press-head .logo { --w: min(240px, 56vw); }
+.press-title { margin-top: 18px; font-size: clamp(40px, 7vw, 64px); font-weight: 400; line-height: 1; color: var(--pink); }
+.press-intro { max-width: 560px; margin: 14px auto 0; color: #ccc; }
+.press-intro a { color: var(--pink); }
+.toc { margin-top: 18px; }
+
+.press { max-width: 1040px; margin: 0 auto; padding: 24px 24px 64px; }
+.press-section { padding: 64px 0 8px; border-top: 2px dashed rgba(255, 12, 197, .35); margin-top: 48px; scroll-margin-top: 16px; }
+.press-section:first-child { margin-top: 32px; }
+.press h2 { margin: 0 0 24px; font-size: clamp(34px, 5vw, 48px); font-weight: 400; line-height: 1.1; }
+.press h3 { margin: 36px 0 12px; font-size: 26px; font-weight: 400; color: var(--pink); }
+.press .two h3:first-child { margin-top: 0; }
+.press .hint { margin-left: 8px; color: #888; font-size: 16px; }
+.press p, .press li { color: #ddd; }
+.press ul { margin: 0; padding-left: 22px; }
+.press li { margin: 4px 0; }
+.press a { color: var(--pink); }
+
+.two { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 48px; align-items: start; }
+.facts { margin: 0; padding: 18px 20px; border: 2px solid #fff; transform: rotate(-.6deg); }
+.facts div { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 12px; padding: 7px 0; border-bottom: 1px dashed #333; }
+.facts div:last-child { border-bottom: 0; }
+.facts dt { color: #999; }
+.facts dd { margin: 0; overflow-wrap: anywhere; }
+
+.shots { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.shot { display: block; padding: 6px; background: #fff; transition: transform .2s ease; }
+.shot:nth-child(odd) { transform: rotate(-1deg); }
+.shot:nth-child(even) { transform: rotate(1deg); }
+.shot:hover { transform: rotate(0) scale(1.04); }
+.shot img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+
+.art { display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-end; }
+.art a { display: block; color: #ccc; text-decoration: none; font-size: 15px; }
+.art img { display: block; height: 170px; width: auto; max-width: 100%; object-fit: cover; border: 6px solid #fff; }
+.art a.tall img { height: 260px; }
+.art a.logo-tile img { height: 170px; padding: 10px; background: #3d6cf0; border-color: #3d6cf0; }
+.art span { display: block; margin-top: 8px; }
+.art a:hover span { color: var(--pink); }
+
+.logos { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
+.logos a { display: block; padding: 24px 24px 14px; border: 2px solid #fff; color: #ccc; text-decoration: none; text-align: center; font-size: 15px; }
+.logos a.light { background: #fff; color: #333; }
+.logos img { display: block; width: 100%; height: auto; margin: 0 auto 10px; }
+.logos a:hover span { color: var(--pink); }
+
+@media (max-width: 760px) {
+  .two { grid-template-columns: 1fr; }
+  .art img, .art a.tall img, .art a.logo-tile img { height: auto; width: 100%; }
+  .art a { width: 100%; }
+}
+
+/* ---------- Little life ---------- */
+/* These run even when the OS asks for reduced motion: they are small, slow and part of the site's character. */
+
+/* Polaroids hang from their tape and sway a little; hovering holds them still. */
+.polaroid { transform-origin: 50% 0; animation: sway 6s ease-in-out infinite; }
+.card:nth-child(2) .polaroid { animation-duration: 7s; animation-delay: -3s; }
+.polaroid:hover { animation-play-state: paused; }
+@keyframes sway { 0%, 100% { rotate: -.9deg; } 50% { rotate: .9deg; } }
+
+/* Gameplay clip that fades in over the cover on hover */
+.pic { position: relative; display: block; }
+.clip { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .35s; pointer-events: none; }
+.clip.on { opacity: 1; }
+
+/* Stickers now ride on the polaroid; hovering one spins it */
+.sticker { transition: transform .6s cubic-bezier(.3, 1.4, .5, 1); }
+.sticker:hover { transform: rotate(374deg) scale(1.15); }
+
+/* Hand-drawn arrows nudge toward their links now and then */
+.links .arrow { animation: nudge 4s ease-in-out infinite; }
+.card:nth-child(2) .links .arrow { animation-delay: -2s; }
+.say .arrow { animation: nudge-down 4s ease-in-out 1s infinite; }
+@keyframes nudge { 0%, 60%, 100% { translate: 0 0; } 70% { translate: 7px 0; } 80% { translate: 0 0; } 88% { translate: 4px 0; } }
+@keyframes nudge-down { 0%, 60%, 100% { translate: 0 0; } 70% { translate: 4px 5px; } 80% { translate: 0 0; } }
+
+/* Paw print left by a click on empty space */
+.paw {
+  position: absolute; z-index: 50; width: 34px; height: 34px; margin: -17px 0 0 -17px;
+  pointer-events: none; rotate: var(--r, 0deg); animation: paw 1.6s ease-out forwards;
+}
+.paw svg { display: block; width: 100%; height: 100%; }
+@keyframes paw { 0% { opacity: 0; scale: .5; } 12% { opacity: .95; scale: 1.08; } 25% { scale: 1; } 70% { opacity: .85; } 100% { opacity: 0; scale: 1; } }
+
+/* "copied!" note after clicking the email */
+.mail { position: relative; }
+.copied {
+  position: absolute; z-index: 5; left: 50%; top: 100%;
+  color: var(--pink); font-size: 22px; white-space: nowrap; pointer-events: none;
+  animation: copied 1.6s ease-out forwards;
+}
+@keyframes copied {
+  0%   { opacity: 0; transform: translate(-50%, 6px) rotate(-5deg) scale(.8); }
+  15%  { opacity: 1; transform: translate(-50%, 0) rotate(-5deg) scale(1); }
+  75%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, -6px) rotate(-5deg); }
+}
+
+/* Nested rotations (sticker on a swaying polaroid) make browsers over-estimate overflow by a few px
+   on phones; nothing is actually drawn past the edge, so clip it to avoid sideways scrolling. */
+.cards { overflow-x: clip; }
