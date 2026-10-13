@@ -3,11 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mishleto</title>
+  <title>Mishleto · Trust Your Gut & Park It! · Indie games from Istanbul</title>
   <meta name="description" content="Mishleto makes small games in Istanbul: Trust Your Gut, a roulette rogue-lite coming November 18, 2026, and Park It!, a parking puzzle out now on Steam.">
+  <link rel="canonical" href="https://mishleto.com/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mishleto.com/">
-  <meta property="og:title" content="Mishleto">
+  <meta property="og:site_name" content="Mishleto">
+  <meta property="og:title" content="Mishleto · Trust Your Gut & Park It!">
   <meta property="og:description" content="Small games from Istanbul. Trust Your Gut is coming November 18, 2026, and Park It! is out now on Steam.">
   <meta property="og:image" content="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4066520/7d1be35025f96eb7685f5adccb69bd7457dbb35b/capsule_616x353_2x.jpg?t=1791039269">
   <meta name="twitter:card" content="summary_large_image">
@@ -18,6 +20,63 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
+  <!-- Tells search engines who Mishleto is and which games belong to it. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://mishleto.com/#mishleto",
+        "name": "Mishleto",
+        "url": "https://mishleto.com/",
+        "logo": "https://mishleto.com/assets/mishleto-black.svg",
+        "description": "A solo indie game label based in Istanbul, focused on creating polished games.",
+        "email": "dev@mishleto.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Istanbul", "addressCountry": "TR" },
+        "sameAs": [
+          "https://x.com/MishletoDev",
+          "https://bsky.app/profile/mishletodev.bsky.social",
+          "https://mishleto.itch.io"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://mishleto.com/#website",
+        "url": "https://mishleto.com/",
+        "name": "Mishleto",
+        "publisher": { "@id": "https://mishleto.com/#mishleto" }
+      },
+      {
+        "@type": "VideoGame",
+        "name": "Trust Your Gut",
+        "url": "https://store.steampowered.com/app/4066520/Trust_Your_Gut/",
+        "description": "A rogue-lite roulette game. Born unlucky; your life is tied to this game. Buy mementos, bend the odds, and return to each spin a little stronger.",
+        "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4066520/7d1be35025f96eb7685f5adccb69bd7457dbb35b/capsule_616x353_2x.jpg?t=1791039269",
+        "genre": ["Roguelite", "Strategy"],
+        "gamePlatform": ["Windows", "Linux"],
+        "applicationCategory": "Game",
+        "author": { "@id": "https://mishleto.com/#mishleto" },
+        "publisher": { "@type": "Organization", "name": "Caspianborn Publishing" },
+        "sameAs": ["https://store.steampowered.com/app/4066520/Trust_Your_Gut/", "https://x.com/trustyourgutgam"]
+      },
+      {
+        "@type": "VideoGame",
+        "name": "Park It!",
+        "url": "https://store.steampowered.com/app/2989830/Park_It/",
+        "description": "A grid-based puzzle game where players park cars in designated spots across 78 levels, all while managing limited fuel.",
+        "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2989830/capsule_616x353.jpg?t=1753714829",
+        "genre": ["Puzzle", "Casual"],
+        "gamePlatform": ["Windows"],
+        "applicationCategory": "Game",
+        "datePublished": "2025-07-28",
+        "author": { "@id": "https://mishleto.com/#mishleto" },
+        "publisher": { "@id": "https://mishleto.com/#mishleto" },
+        "sameAs": ["https://store.steampowered.com/app/2989830/Park_It/"]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header>
